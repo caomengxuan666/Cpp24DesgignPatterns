@@ -25,11 +25,12 @@
  * @version 1.0
  */
 
+#include <format>
 #include <memory>
 #include <mutex>
 #include <print>
 #include <string>
-#include <format>
+
 
 using std::println;
 
@@ -86,7 +87,7 @@ public:
  * @brief 基类调用派生类方法（类似 enable_shared_from_this）
  */
 template<typename T>
-class EnableCRTPShared : public std::enable_shared_from_this<T>{
+class EnableCRTPShared : public std::enable_shared_from_this<T> {
 public:
     std::shared_ptr<T> shared_from_crtp() {
         return std::static_pointer_cast<T>(shared_from_this());
@@ -169,7 +170,7 @@ template<typename T>
 class Orderable {
 public:
     bool operator<(const T &other) const {
-        return static_cast<const T*>(this)->value() < static_cast<const T&>(other).value();
+        return static_cast<const T *>(this)->value() < static_cast<const T &>(other).value();
     }
 
     bool operator>(const T &other) const {

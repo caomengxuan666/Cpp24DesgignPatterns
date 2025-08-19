@@ -58,7 +58,6 @@
 | **Interpreter** | 定义语言的文法表示 | 递归下降解析器 + AST + 异常安全 |
 
 ---
-
 ## 🔧 高级惯用法（Advanced Idioms）
 
 这些是 C++ 工程师的“内功心法”，用于构建高性能、可维护的现代 C++ 库。
@@ -74,8 +73,14 @@
 | **C++20 Concepts** | 类型约束，替代 SFINAE | `template<Arithmetic T>` |
 | **C++20 Coroutines** | 协程，异步编程新范式 | `generator<T>` + `co_yield` |
 | **Three-way Comparison** | 三路比较运算符 | `<=>` 替代手动实现 `==`, `<` 等 |
+| **Expression Templates** | 延迟计算，避免临时对象 | 用于高性能数学库（如 Eigen） |
+| **Template Specialization** | 为特定类型提供特化 | `template<> struct Printer<int>` |
+| **Tag Dispatching** | 通过标签选择重载 | `std::iterator_traits` + 优化路径 |
+| **Type Erasure** | 隐藏具体类型 | `AnyDrawable` + 多态 + `std::function` |
+| **Empty Base Optimization (EBO)** | 空基类优化 | 减少内存占用，`[[no_unique_address]]` |
 
 ---
+
 
 ## 🛠 构建与运行
 
